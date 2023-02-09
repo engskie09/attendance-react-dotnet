@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M9mEvldn4WDOV2yGIIWd/VDLyX8ygD/ZHkOcncDS+CTeC7npcHBuJ+BFThrzYE6TMm3GUojfMExp8JP3WzrWHQ==",
+  "dgSpecHash": "Z4lESnbgc6vfu+/7L5W1HeK30qEnnsSslJkCooYS8B4bml0Lx3aAkC+AnV9UV6i01n9MRtjS95RuXrgDYWar/w==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\Others\\react-dotnet\\attendance-api\\attendance-api.csproj",
+  "projectFilePath": "D:\\Programming\\Others\\attendance-react-dotnet\\server\\attendance-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
