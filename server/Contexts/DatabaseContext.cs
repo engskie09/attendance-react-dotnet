@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Attendance.Models;
 
-public class DatabaseContext : DbContext
+public partial class DatabaseContext : DbContext
 {
     public DbSet<User>? Users { get; set; }
 

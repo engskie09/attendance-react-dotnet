@@ -6,8 +6,8 @@ namespace Attendance.Controllers;
 [Route("v1/users")]
 public class UsersController : ControllerBase
 {
-    [HttpGet(Name = nameof(SelectUsers))]
-    public String SelectUsers()
+    [HttpGet("{page}/{size}")]
+    public String SelectUsers(int page, int size)
     {
         return "SelectUsers";
     }

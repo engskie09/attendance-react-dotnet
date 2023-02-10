@@ -6,26 +6,26 @@ namespace Attendance.Controllers;
 [Route("v1/user")]
 public class UserController : ControllerBase
 {
-    [HttpGet(Name = nameof(SelectUser))]
-    public String SelectUser()
+    [HttpGet("{id}")]
+    public String SelectUser(int id)
     {
         return "SelectUser";
     }
 
-    [HttpPost(Name = nameof(InsertUser))]
+    [HttpPost]
     public String InsertUser()
     {
         return "InsertUser";
     }
 
-    [HttpPatch(Name = nameof(UpdateUser))]
-    public String UpdateUser()
+    [HttpPatch("{id}")]
+    public String UpdateUser(int id)
     {
         return "UpdateUser";
     }
 
-    [HttpDelete(Name = nameof(DeleteUser))]
-    public String DeleteUser()
+    [HttpDelete("{id}")]
+    public String DeleteUser(int id)
     {
         return "DeleteUser";
     }
