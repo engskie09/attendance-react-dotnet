@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace attendance_api.Models;
+namespace Attendance.Models;
 
 [Table("users")]
 public class User
