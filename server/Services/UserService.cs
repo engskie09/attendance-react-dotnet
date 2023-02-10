@@ -9,12 +9,7 @@ namespace Attendance.Services;
 
 public sealed class UserService : IUserService
 {
-    public Task<int> DeleteUser(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<int> InsertUser(User user)
+    public Task<IEnumerable<User>> SelectUsers()
     {
         throw new NotImplementedException();
     }
@@ -24,12 +19,17 @@ public sealed class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<User>> SelectUsers()
+    public Task<int> InsertUser(User user)
     {
         throw new NotImplementedException();
     }
 
     public Task<int> UpdateUser(User user)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> DeleteUser(int id)
     {
         throw new NotImplementedException();
     }

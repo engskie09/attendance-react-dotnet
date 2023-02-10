@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
+using Attendance.Models;
 namespace Attendance.Controllers;
 
 [ApiController]
@@ -13,13 +14,13 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
-    public String InsertUser()
+    public String InsertUser(User user)
     {
         return "InsertUser";
     }
 
     [HttpPatch("{id}")]
-    public String UpdateUser(int id)
+    public String UpdateUser(int id, User user)
     {
         return "UpdateUser";
     }
