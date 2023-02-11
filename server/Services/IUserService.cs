@@ -11,7 +11,7 @@ public interface IUserService
 {
     Task<IEnumerable<User>> SelectUsers();
     Task<User> SelectUser(int id);
-    Task<int> InsertUser(User user);
+    Task<User> InsertUser(User user);
     Task<int> UpdateUser(User user);
     Task<int> DeleteUser(int id);
 }

@@ -9,6 +9,13 @@ namespace Attendance.Services;
 
 public sealed class UserService : IUserService
 {
+    private readonly AttendanceDbContext? _attendanceDbContext;
+
+    public UserService(AttendanceDbContext attendanceDbContext)
+    {
+        _attendanceDbContext = attendanceDbContext;
+    }
+
     public Task<IEnumerable<User>> SelectUsers()
     {
         throw new NotImplementedException();
@@ -19,9 +26,18 @@ public sealed class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<int> InsertUser(User user)
+    public async Task<User> InsertUser(User user)
     {
-        throw new NotImplementedException();
+        if (_attendanceDbContext != null)
+        {
+            _attendanceDbContext.Add(user);
+            await _attendanceDbContext.SaveChangesAsync();
+            return user;
+        }
+        else
+        {
+            throw new NullReferenceException($"{nameof(_attendanceDbContext)}");
+        }
     }
 
     public Task<int> UpdateUser(User user)
