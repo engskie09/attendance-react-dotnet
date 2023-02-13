@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore;
 
+using Attendance.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
@@ -8,11 +9,13 @@ var config = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IUserService, UserService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContextPool<DatabaseContext>(options => options
+builder.Services.AddDbContextPool<AttendanceDbContext>(options => options
                 .UseMySql(
                     config.GetConnectionString("MariaDbConnectionString"),
                     ServerVersion.AutoDetect(config.GetConnectionString("MariaDbConnectionString"))
