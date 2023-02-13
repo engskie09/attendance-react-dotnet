@@ -2,11 +2,11 @@ using Microsoft.EntityFrameworkCore;
 
 using Attendance.Models;
 
-public partial class DatabaseContext : DbContext
+public partial class AttendanceDbContext : DbContext
 {
     public DbSet<User>? Users { get; set; }
 
-    public DatabaseContext (DbContextOptions<DatabaseContext> options) : base(options) { }
+    public AttendanceDbContext (DbContextOptions<AttendanceDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
