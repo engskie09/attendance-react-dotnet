@@ -9,7 +9,7 @@ Dependencies Installation
 
 to run the APP
 - dotnet build
-- dotnet run
+- dotnet run or dotnet watch
 
 ""Database related Commands""
 - dotnet ef migrations add "Initial Migrations"

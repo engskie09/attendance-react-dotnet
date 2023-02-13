@@ -24,6 +24,14 @@ namespace Attendance.Migrations
                         .HasColumnType("int")
                         .HasColumnName("id");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("longtext")
+                        .HasColumnName("first_name");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("longtext")
+                        .HasColumnName("last_name");
+
                     b.Property<string>("Password")
                         .HasColumnType("longtext")
                         .HasColumnName("password");
