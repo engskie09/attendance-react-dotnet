@@ -21,17 +21,25 @@ public sealed class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public Task<User> SelectUser(int id)
+    public async Task<User?> SelectUser(int Id)
     {
-        throw new NotImplementedException();
+        if (_attendanceDbContext != null)
+        {
+            return await _attendanceDbContext.FindAsync<User>(Id);
+        }
+        else
+        {
+            throw new NullReferenceException($"{nameof(_attendanceDbContext)}");
+        }
     }
 
     public async Task<User> InsertUser(User user)
     {
         if (_attendanceDbContext != null)
         {
-            _attendanceDbContext.Add(user);
+            _attendanceDbContext.Add<User>(user);
             await _attendanceDbContext.SaveChangesAsync();
+
             return user;
         }
         else
@@ -40,12 +48,24 @@ public sealed class UserService : IUserService
         }
     }
 
-    public Task<int> UpdateUser(User user)
+    public async Task<User> UpdateUser(User user)
     {
-        throw new NotImplementedException();
+        if (_attendanceDbContext != null)
+        {
+            _attendanceDbContext.Update<User>(user);
+
+            await _attendanceDbContext.SaveChangesAsync();
+
+            return user;
+            
+        }
+        else
+        {
+            throw new NullReferenceException($"{nameof(_attendanceDbContext)}");
+        }
     }
 
-    public Task<int> DeleteUser(int id)
+    public Task DeleteUser(int id)
     {
         throw new NotImplementedException();
     }
