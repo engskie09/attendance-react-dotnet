@@ -4,13 +4,11 @@
 ""Commands to RUN""
 
 Dependencies Installation
-
-- dotnet install ef tools
 - dotnet tool install --global dotnet-ef
+- dotnet tool update --global dotnet-ef
 
-
-- dotnet build
 to run the APP
+- dotnet build
 - dotnet run
 
 ""Database related Commands""
