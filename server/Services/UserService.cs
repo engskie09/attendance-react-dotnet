@@ -21,11 +21,11 @@ public sealed class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public async Task<User?> SelectUser(int Id)
+    public User? SelectUser(int Id)
     {
         if (_attendanceDbContext != null)
         {
-            return await _attendanceDbContext.FindAsync<User>(Id);
+            return _attendanceDbContext?.Users?.Where(x => x.Id == Id).FirstOrDefault();
         }
         else
         {
