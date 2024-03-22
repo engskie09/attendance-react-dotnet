@@ -20,11 +20,11 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<IEnumerable<User>>> SelectUser(int Id)
+    public ActionResult<IEnumerable<User>> SelectUser(int id)
     {
         if (_userService != null)
         {
-            return Ok(await _userService.SelectUser(Id));
+            return Ok(_userService.SelectUser(id));
         }
         else
         {
@@ -46,11 +46,11 @@ public class UserController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public async Task<ActionResult<IEnumerable<User>>> UpdateUser(int Id, User user)
+    public async Task<ActionResult<IEnumerable<User>>> UpdateUser(int id, User user)
     {
         if (_userService != null)
         {
-            var selectedUser = await _userService.SelectUser(Id);
+            var selectedUser = _userService.SelectUser(id);
 
             if (selectedUser == null)
                 return NotFound();
